@@ -7,12 +7,12 @@ export default new Vuex.Store({
   state: {
     user: {
       realName:
-        localStorage.getItem("user" || "[]") === null
+        localStorage.getItem("user" || "[]") === "undefined"
           ? "未登录"
           : JSON.parse(localStorage.getItem("user" || "[]")).realName,
 
       profilePicture:
-        localStorage.getItem("user" || "[]") === null
+        localStorage.getItem("user" || "[]") === "undefined"
           ? ""
           : JSON.parse(localStorage.getItem("user" || "[]")).profilePicture
     },
