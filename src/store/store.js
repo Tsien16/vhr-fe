@@ -7,14 +7,14 @@ export default new Vuex.Store({
   state: {
     user: {
       realName:
-        localStorage.getItem("user" || "[]") === "undefined"
+        localStorage.getItem("realName" || "[]") === null
           ? "未登录"
-          : JSON.parse(localStorage.getItem("user" || "[]")).realName,
+          : localStorage.getItem("realName"),
 
       profilePicture:
-        localStorage.getItem("user" || "[]") === "undefined"
+        localStorage.getItem("profilePicture" || "[]") === null
           ? ""
-          : JSON.parse(localStorage.getItem("user" || "[]")).profilePicture
+          : localStorage.getItem("profilePicture")
     },
     routes: []
   },
@@ -24,10 +24,12 @@ export default new Vuex.Store({
     },
     login(state, user) {
       state.user = user;
-      localStorage.setItem("user", user);
+      localStorage.setItem("realName", user.realName);
+      localStorage.setItem("profilePicture", user.profilePicture);
     },
     logout() {
-      localStorage.removeItem("user");
+      localStorage.removeItem("realName");
+      localStorage.removeItem("profilePicture");
     }
   },
   actions: {}
