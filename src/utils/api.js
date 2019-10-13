@@ -5,8 +5,8 @@
  * @date 2019/9/24 0024 11:44
  */
 
-import axios from 'axios';
-import {Message} from 'element-ui';
+import axios from "axios";
+import { Message } from "element-ui";
 
 // 对所有的请求进行拦截处理
 axios.interceptors.request.use(
@@ -29,6 +29,10 @@ axios.interceptors.response.use(
     ) {
       Message.error({ message: response.data.msg });
       return;
+    }
+
+    if (response.data.msg) {
+      Message.success({ message: response.data.msg });
     }
     return response;
   },

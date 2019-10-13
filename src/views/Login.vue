@@ -24,6 +24,7 @@
         v-model="loginForm.password"
         autocomplete="off"
         placeholder="密码"
+        @keydown.enter.native="submitClick"
       ></el-input>
     </el-form-item>
 

@@ -16,7 +16,6 @@ export const initResource = (router, store) => {
       let userResources = formatRoutes(response.data);
       router.addRoutes(userResources);
       store.commit("initResources", userResources);
-      store.dispatch("connect");
     }
   });
 };
