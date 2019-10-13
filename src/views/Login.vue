@@ -77,8 +77,6 @@ export default {
             this.loading = false;
             if (response && response.status === 200) {
               let data = response.data.data;
-              window.console.log(JSON.stringify(data));
-              window.console.log(typeof JSON.stringify(data));
               this.$store.commit("login", data);
               let path = this.$route.query.redirect;
               // 登录后页面跳转
