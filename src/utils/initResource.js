@@ -4,7 +4,7 @@
  * @version 1.0.0
  * @date 2019/9/24 0024 15:24
  */
-import { getRequest } from "./api";
+import {getRequest} from './api';
 
 export const initResource = (router, store) => {
   if (store.state.routes.length > 0) {
@@ -41,20 +41,19 @@ export const formatRoutes = routes => {
 
     let fmRouter = {
       path: resourcePath,
-      component(resolve) {
+      component: () => {
         if (component.startsWith("Home")) {
-          require(["../views/" + component + ".vue"], resolve);
+          return import(`../views/${component}.vue`);
         } else if (component.startsWith("Employee")) {
-          require(["../views/employee/" + component + ".vue"], resolve);
-          // } else if (component.startsWith("Per")) {
-          //   require(["../components/personnel/" + component + ".vue"], resolve);
-          // } else if (component.startsWith("Sal")) {
-          //   require(["../components/salary/" + component + ".vue"], resolve);
-          // } else if (component.startsWith("Sta")) {
-          //   require(["../components/statistics/" + component + ".vue"], resolve);
-          // } else if (component.startsWith("Sys")) {
-          //   require(["../components/system/" + component + ".vue"], resolve);
-          // }
+          return import(`../views/employee/${component}.vue`);
+        } else if (component.startsWith("Per")) {
+          return import(`../views/personnel/${component}.vue`);
+        } else if (component.startsWith("Sal")) {
+          return import(`../views/salary/${component}.vue`);
+        } else if (component.startsWith("Sta")) {
+          return import(`../views/statistics/${component}.vue`);
+        } else if (component.startsWith("Sys")) {
+          return import(`../views/system/${component}.vue`);
         }
       },
       name: name,
