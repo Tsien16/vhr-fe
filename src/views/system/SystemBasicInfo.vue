@@ -1,14 +1,14 @@
 <template>
   <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
-    <el-tab-pane label="用户管理" name="departmentManagement">
+    <el-tab-pane label="部门管理" name="departmentManagement">
       <department-management />
     </el-tab-pane>
-    <el-tab-pane label="职位管理" name="positionManagement"
-      >职位管理</el-tab-pane
-    >
-    <el-tab-pane label="职称管理" name="professionalTitleManagement"
-      >职称管理</el-tab-pane
-    >
+    <el-tab-pane label="职位管理" name="positionManagement">
+      <position-and-professional-title-management state="position" />
+    </el-tab-pane>
+    <el-tab-pane label="职称管理" name="professionalTitleManagement">
+      <position-and-professional-title-management state="professionalTitle"
+    /></el-tab-pane>
     <el-tab-pane label="奖惩规则" name="rewardAndPunishmentManagement"
       >奖惩规则</el-tab-pane
     >
@@ -19,10 +19,15 @@
 </template>
 
 <script>
-import DepartmentManagement from "./component/DepartmentManagement";
-export default {
+  import DepartmentManagement from './component/DepartmentManagement';
+  import PositionAndProfessionalTitleManagement from './component/PositionAndProfessionalTitleManagement';
+
+  export default {
   name: "SystemBasicInfo",
-  components: { DepartmentManagement },
+  components: {
+    PositionAndProfessionalTitleManagement,
+    DepartmentManagement
+  },
   data() {
     return {
       activeName: "departmentManagement"

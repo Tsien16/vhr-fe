@@ -15,6 +15,7 @@ import {
 } from "./utils/api";
 
 import { initResource } from "./utils/initResource";
+import { isNotNullOrBlank } from "./utils/stringUtil";
 
 Vue.config.productionTip = false;
 
@@ -22,6 +23,7 @@ Vue.prototype.getRequest = getRequest;
 Vue.prototype.postRequest = postRequest;
 Vue.prototype.deleteRequest = deleteRequest;
 Vue.prototype.putRequest = putRequest;
+Vue.prototype.isNotNullOrBlank = isNotNullOrBlank;
 
 // 配置全局路由导航守卫
 router.beforeEach((to, from, next) => {
