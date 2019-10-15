@@ -3,7 +3,7 @@
     <el-tab-pane label="用户管理" name="departmentManagement">
       <department-management />
     </el-tab-pane>
-    <el-tab-pane label="配置管理" name="positionManagement"
+    <el-tab-pane label="职位管理" name="positionManagement"
       >职位管理</el-tab-pane
     >
     <el-tab-pane label="职称管理" name="professionalTitleManagement"

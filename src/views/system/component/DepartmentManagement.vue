@@ -246,6 +246,11 @@ export default {
   mounted() {
     this.treeLoading = true;
     this.loadDepartmentTree();
+  },
+  watch: {
+    keyword(val) {
+      this.$refs.departmentTree.filter(val);
+    }
   }
 };
 </script>
