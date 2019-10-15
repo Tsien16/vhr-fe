@@ -194,4 +194,7 @@ export default {
   width: 180px;
   min-width: 175px;
 }
+.el-breadcrumb {
+  margin-bottom: 15px;
+}
 </style>
