@@ -13,18 +13,20 @@
       >奖惩规则</el-tab-pane
     >
     <el-tab-pane label="权限组管理" name="roleGroupManagement"
-      >权限组管理</el-tab-pane
-    >
+      ><resource-role-management
+    /></el-tab-pane>
   </el-tabs>
 </template>
 
 <script>
   import DepartmentManagement from './component/DepartmentManagement';
   import PositionAndProfessionalTitleManagement from './component/PositionAndProfessionalTitleManagement';
+  import ResourceRoleManagement from './component/ResourceRoleManagement';
 
   export default {
   name: "SystemBasicInfo",
   components: {
+    ResourceRoleManagement,
     PositionAndProfessionalTitleManagement,
     DepartmentManagement
   },
